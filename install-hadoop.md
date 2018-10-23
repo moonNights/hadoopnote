@@ -62,3 +62,29 @@
    $ bin/hdfs dfs -get output output
    $ cat output/*
    ```
+## 配置yarn作为资源管理器
+   修改如下配置文件
+   1. etc/hadoop/mapred-site.xml:
+   ```xml
+   <configuration>
+       <property>
+           <name>mapreduce.framework.name</name>
+	   <value>yarn</value>
+       </property>
+   </configuration>
+   ```
+   2. etc/hadoop/yarn-site.xml
+   ```xml
+   <configuration>
+       <property>
+           <name>yarn.nodemanager.aux-services</name>
+	   <value>mapreduce_shuffle</value>
+       </property>
+   </configuration>
+   ```
+   3. 启动服务
+   ```shell
+    $ sbin/start-yarn.sh
+   ```
+   4. 查看web页面
+   http://localhost:8088/
