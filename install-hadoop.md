@@ -5,7 +5,7 @@
    + ssh
 ## 软件安装-本地模式
    测试
-   ```bash
+   ```shell
 	 $ mkdir input
 	 $ cp etc/hadoop/*.xml input
 	 $ bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.9.1.jar grep input output 'dfs[a-z.]+'
@@ -33,13 +33,13 @@
      </configuration>
    ```
    3. 在本地添加免密登陆证书
-   ```bash
+   ```shell
       $ ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
       $ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
       $ chmod 0600 ~/.ssh/authorized_keys
    ```
    4. 执行
-   ```bash
+   ```shell
    --不要多次初始化namenode
     $ bin/hdfs namenode -format
     $ sbin/start-dfs.sh
@@ -53,7 +53,7 @@
    ```
 
    6. 执行测试
-   ```bash
+   ```shell
    $ bin/hdfs dfs -mkdir /user
    $ bin/hdfs dfs -mkdir /user/test
    $ bin/hdfs dfs -put etc/hadoop input
