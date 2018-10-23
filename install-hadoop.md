@@ -47,7 +47,7 @@
    5. 在浏览器中通过网页浏览
    ```
    在3.x以后浏览
-   http://localhost:98070/
+   http://localhost:9870/
    在3.x以前访问
    http://localhost:50070/
    ```
